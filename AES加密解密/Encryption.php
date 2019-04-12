@@ -84,7 +84,7 @@ class Encryption
      */
     public function encrypt($value, $serialize = true)
     {
-        // openssl_cipher_iv_length获取密码IV长度，
+        // openssl_cipher_iv_length获取密码IV长度，$iv加解密的向量，有些方法需要设置比如CBC
         $iv = random_bytes(openssl_cipher_iv_length($this->cipher));
 
         // 使用openssl_encrypt加密数据
